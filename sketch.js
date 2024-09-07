@@ -15,7 +15,10 @@ function setup() {
 }
 
 function draw() {
-  background(220); // try commenting this out!
+
+  //purple background
+  background(128,0,128); 
+
  
   // if x hits the right side or the left side of the canvas,
   // switch directions...
@@ -30,7 +33,11 @@ function draw() {
   }
   y1 = y1 + y1Speed;
 
+  // set color to blue
+  fill("blue")
   ellipse(x1, y1, d1);
+
+
 
   // second shape
   // if x hits the right side or the left side of the canvas,
@@ -46,5 +53,7 @@ function draw() {
   }
   y2 = y2 + y2Speed;
 
-  ellipse(x2, y2, d2);
+  // set color to pink 
+  fill("pink")
+  ellipse(x1,x2,d2);
 }
