@@ -14,18 +14,12 @@ let color2;       // color of the second ball
 
 let bgcolor;      // Background color
 
-let emoji;      // Current 
-const emojis = ["⭐️","💫","☄️","✪","🌙"]; // list of emojis to choose from
-
 function setup() {
   createCanvas(400, 400);
 
   // Set random colors for both ellipses
   color1 = color(random(225), random(225), random(225));
   color2 = color(random(225), random(225), random(225));
-
-  // Inital emoji
-  emoji = random(emojis);
 
   // Set inital color to black
   background(0,0,0)
@@ -81,24 +75,6 @@ function setup() {
   // set color to pink 
   fill(color2)
   ellipse(x1,x2,d2);
-
-
- // emojis 
- textSize(75)
- text( emoji , mouseX, mouseY) // random
-
- // Check for when ellispes overlap of collide
- checkCollision(x1, y1, d1)
- checkCollision(x2, y2, d2)
-
-}
-
-function checkCollision (x, y, d) {
-  let distance = dist(x, y, mouseX, mouseY);
-  let radius = d / 2;
-  if ( distance < radius + 27) { // radius of emoji
-    emoji = random(emojis) // emoji is changed upon collision 
-  }
 }
 
 function keyPressed() {
@@ -115,7 +91,4 @@ function keyPressed() {
     y1Speed *= 0.8; //decrease speed by 20%
     y2Speed *= 0.8; //decrease speed by 20%
   }
-
-
-
 }
